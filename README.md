@@ -6,7 +6,7 @@ to run this code you need to:
 after that is done you can view application at http://127.0.0.1:8000/docs
 
 GET /statistics requires from_date: date, to_date: date filter_column: [created_at, views, clicks, rub_cost, cost_per_click, cost_per_view], desc: bool parameters
-<br> it responses with list of statistic entities
+<br>you can sort values by filter_column by desc, if desc param true and by asc if desc param is false <br>it responses with list of statistic entities
 
 POST /statistics requires "views": positiveint, "clicks": positiveint, rub_cost: Optional[float], cost_per_click: Optional[float], cost_per_view: Optional[float] fields 
 <br> it responses with json of statistic entity
