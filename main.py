@@ -1,6 +1,8 @@
 import datetime
 
 from fastapi import FastAPI, Body, Query
+from starlette.middleware.cors import CORSMiddleware
+
 from dal.statistic_dal import StatisticDAL
 from db.engine import async_session
 from serializers.statistic import (
@@ -11,6 +13,13 @@ from serializers.statistic import (
 )
 
 app = FastAPI()
+app.add_middleware(
+            CORSMiddleware,
+            allow_origins=["*"],
+            allow_credentials=True,
+            allow_methods=["*"],
+            allow_headers=["*"],
+        )
 
 
 @app.post("/statistics")
